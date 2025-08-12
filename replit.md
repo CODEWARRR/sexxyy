@@ -1,6 +1,6 @@
 # Overview
 
-This is a full-stack web application for Jotah, India's first and only rolling paper brand. The application showcases the company's heritage, products, and provides online ordering through delivery platforms along with a contact form for customer inquiries. Built as a modern React frontend with an Express.js backend, it emphasizes the brand's pioneering position as India's indigenous rolling paper company and premium quality positioning.
+This is a full-stack web application for Jotah, India's first and only rolling paper brand. The application is specifically focused on showcasing Jotah's premium rolling papers, featuring actual product images and the official logo. The site provides online ordering through major delivery platforms (Zepto, Blinkit, Instamart), a "What the Fun" QR code page, and contact forms for customer inquiries. Built as a modern React frontend with an Express.js backend, it emphasizes Jotah's pioneering position as India's indigenous rolling paper company.
 
 # User Preferences
 

@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import jotahLogoPath from "@assets/jotah-logo.jpeg";
 
 export default function HeroSection() {
   const scrollToSection = (sectionId: string) => {
@@ -9,43 +10,55 @@ export default function HeroSection() {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 z-0">
-        <img 
-          src="https://pixabay.com/get/g13b2e9b97da71c343a380b2f374c2f96a38dbaba1605e395dbd345f59665404c51b20d73491e9e1806a10607b9bebaecfa9e5339a56677a23f6f4b19174b16ba_1280.jpg"
-          alt="Premium tobacco leaves background"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-dark-brown/80 to-saddle-brown/60"></div>
+    <section id="home" className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100">
+      <div className="absolute inset-0 z-0 opacity-10">
+        <div className="w-full h-full bg-gradient-to-br from-saddle-brown/20 to-goldenrod/20"></div>
       </div>
       
-      <div className="relative z-10 text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-5xl md:text-7xl font-playfair font-bold text-white mb-6">
-          India's <span className="text-goldenrod">Only</span> Rolling Paper Brand
+      <div className="relative z-10 text-center max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Logo */}
+        <div className="mb-8">
+          <img 
+            src={jotahLogoPath}
+            alt="Jotah Rolling Papers Logo"
+            className="h-32 md:h-40 mx-auto rounded-2xl shadow-2xl"
+          />
+        </div>
+
+        <h1 className="text-5xl md:text-7xl font-playfair font-bold text-dark-brown mb-6">
+          <span className="text-saddle-brown">JOTAH</span>
         </h1>
-        <p className="text-xl md:text-2xl text-warm-cream mb-4 leading-relaxed">
-          Premium rolling papers and tobacco accessories, handcrafted with centuries of Indian heritage and modern excellence
+        
+        <h2 className="text-2xl md:text-4xl font-semibold text-goldenrod mb-8">
+          India's First Rolling Paper Brand
+        </h2>
+        
+        <p className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed max-w-4xl mx-auto">
+          Premium quality rolling papers crafted for the discerning Indian smoker. 
+          Experience the perfect blend of tradition and innovation in every roll.
         </p>
-        <div className="bg-goldenrod/20 backdrop-blur-sm rounded-xl p-4 mb-8 border border-goldenrod/30">
-          <p className="text-goldenrod font-semibold text-lg">
-            🇮🇳 Proudly Made in India • First Indigenous Brand • Premium Quality Since Day One
+        
+        <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 mb-8 border border-saddle-brown/20 shadow-lg max-w-2xl mx-auto">
+          <p className="text-saddle-brown font-semibold text-lg">
+            🇮🇳 Made in India • Premium Quality • Authentic Experience
           </p>
         </div>
+        
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button
             onClick={() => scrollToSection("products")}
-            className="bg-goldenrod hover:bg-peru-gold text-dark-brown px-8 py-4 rounded-lg font-semibold text-lg transition-all transform hover:scale-105"
+            className="bg-saddle-brown hover:bg-dark-brown text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all transform hover:scale-105 shadow-lg"
             data-testid="button-explore-products"
           >
-            Explore Products
+            Explore Our Rolling Papers
           </Button>
           <Button
-            onClick={() => scrollToSection("heritage")}
+            onClick={() => scrollToSection("find-products")}
             variant="outline"
-            className="border-2 border-white text-white hover:bg-white hover:text-dark-brown px-8 py-4 rounded-lg font-semibold text-lg transition-all"
-            data-testid="button-our-heritage"
+            className="border-2 border-saddle-brown text-saddle-brown hover:bg-saddle-brown hover:text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all"
+            data-testid="button-buy-now"
           >
-            Our Heritage
+            Buy Now
           </Button>
         </div>
       </div>

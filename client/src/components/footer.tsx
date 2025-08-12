@@ -2,10 +2,10 @@ import { Facebook, Instagram, Twitter, Linkedin } from "lucide-react";
 
 export default function Footer() {
   const productLinks = [
-    "Rolling Papers",
-    "Tobacco Accessories", 
-    "Premium Collection",
-    "Gift Sets"
+    "Classic Rolling Papers",
+    "Premium Collection", 
+    "Special Editions",
+    "Bulk Orders"
   ];
 
   const companyLinks = [
@@ -42,7 +42,7 @@ export default function Footer() {
           <div>
             <h3 className="text-2xl font-playfair font-bold mb-4">Jotah</h3>
             <p className="text-warm-cream mb-4">
-              Premium rolling papers and tobacco accessories crafted with centuries of Indian heritage and modern excellence.
+              India's first rolling paper brand, crafted with premium quality materials and uncompromising standards for the discerning smoker.
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social, index) => (

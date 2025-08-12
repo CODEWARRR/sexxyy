@@ -183,10 +183,10 @@ export default function ContactSection() {
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="general">General Inquiry</SelectItem>
-                    <SelectItem value="product">Product Information</SelectItem>
-                    <SelectItem value="dealer">Dealer Partnership</SelectItem>
+                    <SelectItem value="product">Rolling Paper Information</SelectItem>
+                    <SelectItem value="retail">Retail Partnership</SelectItem>
                     <SelectItem value="bulk">Bulk Orders</SelectItem>
-                    <SelectItem value="quality">Quality Issues</SelectItem>
+                    <SelectItem value="quality">Quality Questions</SelectItem>
                     <SelectItem value="other">Other</SelectItem>
                   </SelectContent>
                 </Select>

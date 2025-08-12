@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import jotahLogoPath from "@assets/jotah-logo.jpeg";
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,9 +18,14 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
-            <div className="flex-shrink-0">
+            <div className="flex-shrink-0 flex items-center">
+              <img 
+                src={jotahLogoPath}
+                alt="Jotah Logo"
+                className="h-10 w-auto rounded-lg mr-3"
+              />
               <h1 className="text-2xl font-playfair font-bold text-saddle-brown">
-                Jotah
+                JOTAH
               </h1>
             </div>
           </div>
@@ -41,11 +47,11 @@ export default function Navigation() {
                 Products
               </button>
               <button
-                onClick={() => scrollToSection("heritage")}
+                onClick={() => scrollToSection("brand-story")}
                 className="text-dark-brown hover:text-saddle-brown px-3 py-2 text-sm font-medium transition-colors"
-                data-testid="nav-heritage"
+                data-testid="nav-brand-story"
               >
-                Heritage
+                Our Story
               </button>
               <button
                 onClick={() => scrollToSection("find-products")}
@@ -102,11 +108,11 @@ export default function Navigation() {
               Products
             </button>
             <button
-              onClick={() => scrollToSection("heritage")}
+              onClick={() => scrollToSection("brand-story")}
               className="block text-dark-brown hover:text-saddle-brown px-3 py-2 text-base font-medium w-full text-left"
-              data-testid="mobile-nav-heritage"
+              data-testid="mobile-nav-brand-story"
             >
-              Heritage
+              Our Story
             </button>
             <button
               onClick={() => scrollToSection("find-products")}

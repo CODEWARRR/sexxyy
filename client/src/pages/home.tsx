@@ -1,20 +1,18 @@
 import Navigation from "@/components/navigation";
 import HeroSection from "@/components/hero-section";
-import ProductShowcase from "@/components/product-showcase";
-import HeritageSection from "@/components/heritage-section";
-import Testimonials from "@/components/testimonials";
+import RollingPaperShowcase from "@/components/rolling-paper-showcase";
+import BrandStory from "@/components/brand-story";
 import FindProducts from "@/components/find-products";
 import ContactSection from "@/components/contact-section";
 import Footer from "@/components/footer";
 
 export default function Home() {
   return (
-    <div className="bg-warm-cream">
+    <div className="bg-white">
       <Navigation />
       <HeroSection />
-      <ProductShowcase />
-      <HeritageSection />
-      <Testimonials />
+      <RollingPaperShowcase />
+      <BrandStory />
       <FindProducts />
       <ContactSection />
       <Footer />
