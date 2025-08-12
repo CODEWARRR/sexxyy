@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Twitter, Linkedin } from "lucide-react";
+import { Facebook, Instagram, Twitter, Linkedin, Mail, Phone, MapPin } from "lucide-react";
 
 export default function Footer() {
   const productLinks = [
@@ -10,22 +10,16 @@ export default function Footer() {
 
   const companyLinks = [
     "About Us",
-    "Our Heritage",
+    "Our Story", 
     "Quality Standards",
-    "Careers"
+    "Contact"
   ];
 
   const supportLinks = [
-    "Find Products",
-    "Contact Us",
-    "What the Fun",
-    "FAQ"
-  ];
-
-  const legalLinks = [
-    { text: "Privacy Policy", href: "#" },
-    { text: "Terms of Service", href: "#" },
-    { text: "Cookie Policy", href: "#" }
+    "FAQ",
+    "Retail Partners",
+    "Track Order",
+    "Support"
   ];
 
   const socialLinks = [
@@ -36,39 +30,42 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-saddle-brown text-white py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-4 gap-8">
-          <div>
-            <h3 className="text-2xl font-playfair font-bold mb-4">Jotah</h3>
-            <p className="text-warm-cream mb-4">
+    <footer className="bg-gradient-to-br from-black via-gray-900 to-black border-t border-goldenrod/20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="grid md:grid-cols-4 gap-8 mb-12">
+          {/* Brand Section */}
+          <div className="md:col-span-1">
+            <h3 className="text-3xl font-playfair font-bold bg-gradient-to-r from-goldenrod to-yellow-400 bg-clip-text text-transparent mb-4">
+              JOTAH
+            </h3>
+            <p className="text-gray-300 mb-6 leading-relaxed">
               India's first rolling paper brand, crafted with premium quality materials and uncompromising standards for the discerning smoker.
             </p>
-            <div className="flex space-x-4">
-              {socialLinks.map((social, index) => (
-                <a 
-                  key={index}
-                  href={social.href}
-                  className="text-warm-cream hover:text-goldenrod transition-colors"
-                  aria-label={social.label}
-                  data-testid={`footer-social-${social.label.toLowerCase()}`}
-                >
-                  <social.icon className="h-5 w-5" />
-                </a>
-              ))}
+            
+            {/* Contact Info */}
+            <div className="space-y-3">
+              <div className="flex items-center text-gray-300">
+                <Mail className="h-4 w-4 text-goldenrod mr-3" />
+                <span className="text-sm">hello@jotah.in</span>
+              </div>
+              <div className="flex items-center text-gray-300">
+                <Phone className="h-4 w-4 text-goldenrod mr-3" />
+                <span className="text-sm">+91 98765 43210</span>
+              </div>
+              <div className="flex items-center text-gray-300">
+                <MapPin className="h-4 w-4 text-goldenrod mr-3" />
+                <span className="text-sm">Mumbai, India</span>
+              </div>
             </div>
           </div>
 
+          {/* Products */}
           <div>
-            <h4 className="font-semibold text-lg mb-4">Products</h4>
+            <h4 className="text-white font-bold mb-4">Products</h4>
             <ul className="space-y-2">
               {productLinks.map((link, index) => (
                 <li key={index}>
-                  <a 
-                    href="#" 
-                    className="text-warm-cream hover:text-goldenrod transition-colors"
-                    data-testid={`footer-product-${link.toLowerCase().replace(/\s+/g, '-')}`}
-                  >
+                  <a href="#" className="text-gray-300 hover:text-goldenrod transition-colors text-sm">
                     {link}
                   </a>
                 </li>
@@ -76,16 +73,13 @@ export default function Footer() {
             </ul>
           </div>
 
+          {/* Company */}
           <div>
-            <h4 className="font-semibold text-lg mb-4">Company</h4>
+            <h4 className="text-white font-bold mb-4">Company</h4>
             <ul className="space-y-2">
               {companyLinks.map((link, index) => (
                 <li key={index}>
-                  <a 
-                    href="#" 
-                    className="text-warm-cream hover:text-goldenrod transition-colors"
-                    data-testid={`footer-company-${link.toLowerCase().replace(/\s+/g, '-')}`}
-                  >
+                  <a href="#" className="text-gray-300 hover:text-goldenrod transition-colors text-sm">
                     {link}
                   </a>
                 </li>
@@ -93,37 +87,77 @@ export default function Footer() {
             </ul>
           </div>
 
+          {/* Support */}
           <div>
-            <h4 className="font-semibold text-lg mb-4">Support</h4>
-            <ul className="space-y-2">
+            <h4 className="text-white font-bold mb-4">Support</h4>
+            <ul className="space-y-2 mb-6">
               {supportLinks.map((link, index) => (
                 <li key={index}>
-                  <a 
-                    href="#" 
-                    className="text-warm-cream hover:text-goldenrod transition-colors"
-                    data-testid={`footer-support-${link.toLowerCase().replace(/\s+/g, '-')}`}
-                  >
+                  <a href="#" className="text-gray-300 hover:text-goldenrod transition-colors text-sm">
                     {link}
                   </a>
                 </li>
               ))}
             </ul>
+
+            {/* Social Links */}
+            <div>
+              <h5 className="text-white font-semibold mb-3 text-sm">Follow Us</h5>
+              <div className="flex space-x-3">
+                {socialLinks.map((social, index) => (
+                  <a
+                    key={index}
+                    href={social.href}
+                    className="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-goldenrod hover:text-black transition-all"
+                    aria-label={social.label}
+                  >
+                    <social.icon className="h-4 w-4" />
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
 
-        <div className="border-t border-peru-gold/30 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-warm-cream text-sm">© 2024 Jotah. All rights reserved.</p>
-          <div className="flex space-x-6 mt-4 md:mt-0">
-            {legalLinks.map((link, index) => (
-              <a 
-                key={index}
-                href={link.href} 
-                className="text-warm-cream hover:text-goldenrod text-sm transition-colors"
-                data-testid={`footer-legal-${link.text.toLowerCase().replace(/\s+/g, '-')}`}
-              >
-                {link.text}
+        {/* Premium Banner */}
+        <div className="bg-gradient-to-r from-goldenrod/20 to-yellow-400/20 rounded-2xl p-6 border border-goldenrod/30 mb-8">
+          <div className="text-center">
+            <div className="flex items-center justify-center space-x-6 text-goldenrod font-semibold">
+              <span className="flex items-center">
+                <span className="text-2xl mr-2">🇮🇳</span>
+                Made in India
+              </span>
+              <span className="hidden md:block w-1 h-6 bg-goldenrod/50"></span>
+              <span className="flex items-center">
+                <span className="text-2xl mr-2">⭐</span>
+                Premium Quality
+              </span>
+              <span className="hidden md:block w-1 h-6 bg-goldenrod/50"></span>
+              <span className="flex items-center">
+                <span className="text-2xl mr-2">🏆</span>
+                India's First Brand
+              </span>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Section */}
+        <div className="border-t border-gray-800 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <div className="text-gray-400 text-sm mb-4 md:mb-0">
+              © 2024 Jotah. All rights reserved. India's first rolling paper brand.
+            </div>
+            <div className="flex space-x-6 text-sm">
+              <a href="#" className="text-gray-400 hover:text-goldenrod transition-colors">
+                Privacy Policy
               </a>
-            ))}
+              <a href="#" className="text-gray-400 hover:text-goldenrod transition-colors">
+                Terms of Service
+              </a>
+              <a href="#" className="text-gray-400 hover:text-goldenrod transition-colors">
+                Quality Assurance
+              </a>
+            </div>
           </div>
         </div>
       </div>

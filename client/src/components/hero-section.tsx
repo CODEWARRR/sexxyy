@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { ChevronDown } from "lucide-react";
 import jotahLogoPath from "@assets/jotah-logo.jpeg";
 
 export default function HeroSection() {
@@ -10,58 +11,95 @@ export default function HeroSection() {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100">
-      <div className="absolute inset-0 z-0 opacity-10">
-        <div className="w-full h-full bg-gradient-to-br from-saddle-brown/20 to-goldenrod/20"></div>
+    <section id="home" className="relative min-h-screen flex items-center justify-center bg-black overflow-hidden">
+      {/* Background Video/Image Effect */}
+      <div className="absolute inset-0 z-0">
+        <div className="w-full h-full bg-gradient-to-br from-black via-gray-900 to-black"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/30"></div>
+        {/* Animated particles effect */}
+        <div className="absolute inset-0 opacity-20">
+          {[...Array(20)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute w-1 h-1 bg-goldenrod rounded-full animate-pulse"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 3}s`,
+                animationDuration: `${2 + Math.random() * 2}s`
+              }}
+            />
+          ))}
+        </div>
       </div>
       
       <div className="relative z-10 text-center max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Logo */}
-        <div className="mb-8">
+        <div className="mb-12 animate-fade-in">
           <img 
             src={jotahLogoPath}
             alt="Jotah Rolling Papers Logo"
-            className="h-32 md:h-40 mx-auto rounded-2xl shadow-2xl"
+            className="h-24 md:h-32 mx-auto rounded-xl shadow-2xl border-2 border-goldenrod/30"
           />
         </div>
 
-        <h1 className="text-5xl md:text-7xl font-playfair font-bold text-dark-brown mb-6">
-          <span className="text-saddle-brown">JOTAH</span>
-        </h1>
+        {/* Main Title */}
+        <div className="mb-8 animate-slide-up">
+          <h1 className="text-6xl md:text-8xl font-playfair font-bold text-white mb-4 tracking-tight">
+            <span className="bg-gradient-to-r from-goldenrod via-yellow-400 to-goldenrod bg-clip-text text-transparent">
+              JOTAH
+            </span>
+          </h1>
+          <div className="w-24 h-1 bg-gradient-to-r from-transparent via-goldenrod to-transparent mx-auto mb-6"></div>
+        </div>
         
-        <h2 className="text-2xl md:text-4xl font-semibold text-goldenrod mb-8">
+        {/* Subtitle */}
+        <h2 className="text-2xl md:text-4xl font-semibold text-goldenrod mb-6 animate-fade-in-delay">
           India's First Rolling Paper Brand
         </h2>
         
-        <p className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed max-w-4xl mx-auto">
-          Premium quality rolling papers crafted for the discerning Indian smoker. 
-          Experience the perfect blend of tradition and innovation in every roll.
+        {/* Description */}
+        <p className="text-lg md:text-xl text-gray-300 mb-12 leading-relaxed max-w-3xl mx-auto animate-fade-in-delay-2">
+          Experience premium quality rolling papers crafted for the discerning smoker. 
+          <span className="text-goldenrod font-medium"> Born in India, made for excellence.</span>
         </p>
         
-        <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 mb-8 border border-saddle-brown/20 shadow-lg max-w-2xl mx-auto">
-          <p className="text-saddle-brown font-semibold text-lg">
-            🇮🇳 Made in India • Premium Quality • Authentic Experience
-          </p>
+        {/* Badge */}
+        <div className="inline-flex items-center bg-gradient-to-r from-goldenrod/20 to-yellow-400/20 backdrop-blur-sm rounded-full px-8 py-4 mb-12 border border-goldenrod/30 animate-fade-in-delay-3">
+          <span className="text-goldenrod font-semibold text-lg">
+            🇮🇳 Proudly Made in India • Premium Quality • Authentic Experience
+          </span>
         </div>
         
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        {/* Call to Action Buttons */}
+        <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16 animate-fade-in-delay-4">
           <Button
             onClick={() => scrollToSection("products")}
-            className="bg-saddle-brown hover:bg-dark-brown text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all transform hover:scale-105 shadow-lg"
+            className="bg-gradient-to-r from-goldenrod to-yellow-400 hover:from-yellow-400 hover:to-goldenrod text-black px-10 py-4 rounded-full font-bold text-lg transition-all transform hover:scale-105 shadow-2xl hover:shadow-goldenrod/25"
             data-testid="button-explore-products"
           >
-            Explore Our Rolling Papers
+            Explore Products
           </Button>
           <Button
             onClick={() => scrollToSection("find-products")}
             variant="outline"
-            className="border-2 border-saddle-brown text-saddle-brown hover:bg-saddle-brown hover:text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all"
+            className="border-2 border-goldenrod text-goldenrod hover:bg-goldenrod hover:text-black px-10 py-4 rounded-full font-bold text-lg transition-all hover:shadow-lg hover:shadow-goldenrod/25"
             data-testid="button-buy-now"
           >
-            Buy Now
+            Order Now
           </Button>
         </div>
+
+        {/* Scroll Indicator */}
+        <div className="animate-bounce">
+          <ChevronDown 
+            className="h-8 w-8 text-goldenrod mx-auto cursor-pointer hover:text-yellow-400 transition-colors"
+            onClick={() => scrollToSection("products")}
+          />
+        </div>
       </div>
+
+
     </section>
   );
 }

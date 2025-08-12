@@ -1,261 +1,268 @@
 import { useState } from "react";
-import { useMutation } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Mail, Phone, MapPin, Send, CheckCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import { apiRequest } from "@/lib/queryClient";
-import { MapPin, Phone, Mail, Clock, Facebook, Instagram, Twitter, Linkedin } from "lucide-react";
-import type { InsertContact } from "@shared/schema";
 
 export default function ContactSection() {
-  const { toast } = useToast();
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
+    name: "",
     email: "",
     phone: "",
     inquiryType: "",
     message: ""
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const { toast } = useToast();
 
-  const contactMutation = useMutation({
-    mutationFn: async (data: InsertContact) => {
-      const response = await apiRequest("POST", "/api/contact", data);
-      return response.json();
-    },
-    onSuccess: () => {
-      toast({
-        title: "Message sent successfully!",
-        description: "We'll get back to you within 24 hours.",
+  const handleInputChange = (field: string, value: string) => {
+    setFormData(prev => ({
+      ...prev,
+      [field]: value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("/api/contacts", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData)
       });
-      setFormData({
-        firstName: "",
-        lastName: "",
-        email: "",
-        phone: "",
-        inquiryType: "",
-        message: ""
-      });
-    },
-    onError: (error) => {
-      console.error("Contact form error:", error);
+
+      if (response.ok) {
+        setIsSubmitted(true);
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          inquiryType: "",
+          message: ""
+        });
+        toast({
+          title: "Message sent successfully!",
+          description: "We'll get back to you within 24 hours.",
+        });
+      } else {
+        throw new Error("Failed to send message");
+      }
+    } catch (error) {
       toast({
-        title: "Failed to send message",
+        title: "Error sending message",
         description: "Please try again later.",
         variant: "destructive",
       });
-    },
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!formData.firstName || !formData.lastName || !formData.email || !formData.inquiryType || !formData.message) {
-      toast({
-        title: "Please fill in all required fields",
-        variant: "destructive",
-      });
-      return;
+    } finally {
+      setIsSubmitting(false);
     }
-    contactMutation.mutate(formData);
-  };
-
-  const handleInputChange = (field: keyof typeof formData, value: string) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
   };
 
   const contactInfo = [
     {
-      icon: MapPin,
-      title: "Head Office",
-      content: "123 Heritage Street\nMumbai, Maharashtra 400001\nIndia"
+      icon: Mail,
+      title: "Email Us",
+      content: "hello@jotah.in",
+      description: "We respond within 24 hours"
     },
     {
       icon: Phone,
-      title: "Phone",
-      content: "+91 22 1234 5678\n+91 98765 43210"
+      title: "Call Us",
+      content: "+91 98765 43210",
+      description: "Mon-Fri, 9 AM - 6 PM IST"
     },
     {
-      icon: Mail,
-      title: "Email",
-      content: "info@jotah.com\nsales@jotah.com"
-    },
-    {
-      icon: Clock,
-      title: "Business Hours",
-      content: "Monday - Friday: 9:00 AM - 6:00 PM\nSaturday: 10:00 AM - 4:00 PM\nSunday: Closed"
+      icon: MapPin,
+      title: "Visit Us",
+      content: "Mumbai, India",
+      description: "Made in India with pride"
     }
   ];
 
-  const socialLinks = [
-    { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" }
-  ];
-
   return (
-    <section id="contact" className="py-20 bg-dark-brown text-white">
+    <section id="contact" className="py-20 bg-gradient-to-br from-black via-gray-900 to-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-playfair font-bold mb-6">Get In Touch</h2>
-          <p className="text-lg text-warm-cream max-w-3xl mx-auto">
-            Ready to experience premium quality? Contact us for business inquiries, product information, or partnership opportunities
+          <div className="inline-block mb-4">
+            <span className="bg-gradient-to-r from-goldenrod to-yellow-400 bg-clip-text text-transparent text-sm font-bold tracking-widest uppercase">
+              Contact Us
+            </span>
+          </div>
+          <h2 className="text-5xl md:text-6xl font-playfair font-bold text-white mb-6">
+            Get in <span className="text-goldenrod">Touch</span>
+          </h2>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            Have questions about our rolling papers? Want to become a retail partner? We'd love to hear from you.
           </p>
+          <div className="w-24 h-1 bg-gradient-to-r from-transparent via-goldenrod to-transparent mx-auto mt-8"></div>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
-          {/* Contact Form */}
-          <div className="bg-white rounded-2xl p-8 text-dark-brown">
-            <h3 className="text-2xl font-playfair font-bold mb-6">Send us a Message</h3>
-            
-            <form onSubmit={handleSubmit}>
-              <div className="grid md:grid-cols-2 gap-6 mb-6">
-                <div>
-                  <Label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
-                    First Name *
-                  </Label>
-                  <Input
-                    id="firstName"
-                    type="text"
-                    required
-                    value={formData.firstName}
-                    onChange={(e) => handleInputChange("firstName", e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-saddle-brown focus:border-transparent"
-                    data-testid="input-first-name"
-                  />
-                </div>
-                <div>
-                  <Label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-2">
-                    Last Name *
-                  </Label>
-                  <Input
-                    id="lastName"
-                    type="text"
-                    required
-                    value={formData.lastName}
-                    onChange={(e) => handleInputChange("lastName", e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-saddle-brown focus:border-transparent"
-                    data-testid="input-last-name"
-                  />
-                </div>
-              </div>
-
-              <div className="grid md:grid-cols-2 gap-6 mb-6">
-                <div>
-                  <Label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                    Email Address *
-                  </Label>
-                  <Input
-                    id="email"
-                    type="email"
-                    required
-                    value={formData.email}
-                    onChange={(e) => handleInputChange("email", e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-saddle-brown focus:border-transparent"
-                    data-testid="input-email"
-                  />
-                </div>
-                <div>
-                  <Label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                    Phone Number
-                  </Label>
-                  <Input
-                    id="phone"
-                    type="tel"
-                    value={formData.phone}
-                    onChange={(e) => handleInputChange("phone", e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-saddle-brown focus:border-transparent"
-                    data-testid="input-phone"
-                  />
-                </div>
-              </div>
-
-              <div className="mb-6">
-                <Label htmlFor="inquiryType" className="block text-sm font-medium text-gray-700 mb-2">
-                  Inquiry Type
-                </Label>
-                <Select value={formData.inquiryType} onValueChange={(value) => handleInputChange("inquiryType", value)}>
-                  <SelectTrigger className="w-full" data-testid="select-inquiry-type">
-                    <SelectValue placeholder="Select inquiry type" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="general">General Inquiry</SelectItem>
-                    <SelectItem value="product">Rolling Paper Information</SelectItem>
-                    <SelectItem value="retail">Retail Partnership</SelectItem>
-                    <SelectItem value="bulk">Bulk Orders</SelectItem>
-                    <SelectItem value="quality">Quality Questions</SelectItem>
-                    <SelectItem value="other">Other</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-
-              <div className="mb-6">
-                <Label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                  Message *
-                </Label>
-                <Textarea
-                  id="message"
-                  rows={5}
-                  required
-                  placeholder="Tell us about your inquiry..."
-                  value={formData.message}
-                  onChange={(e) => handleInputChange("message", e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-saddle-brown focus:border-transparent resize-none"
-                  data-testid="textarea-message"
-                />
-              </div>
-
-              <Button 
-                type="submit" 
-                disabled={contactMutation.isPending}
-                className="w-full bg-saddle-brown hover:bg-dark-brown text-white px-6 py-4 rounded-lg font-semibold transition-colors disabled:opacity-50"
-                data-testid="button-send-message"
-              >
-                {contactMutation.isPending ? "Sending..." : "Send Message"}
-              </Button>
-            </form>
-          </div>
-
+        <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* Contact Information */}
           <div className="space-y-8">
-            <div>
-              <h3 className="text-2xl font-playfair font-bold mb-6">Contact Information</h3>
-              
+            <div className="bg-gradient-to-br from-gray-800/60 to-gray-900/60 rounded-3xl p-8 border border-goldenrod/20">
+              <h3 className="text-3xl font-playfair font-bold text-white mb-6">
+                Let's Connect
+              </h3>
+              <p className="text-gray-300 mb-8 text-lg leading-relaxed">
+                We're always excited to connect with our customers and potential partners. 
+                Reach out to us for any queries about our premium rolling papers.
+              </p>
+
               <div className="space-y-6">
                 {contactInfo.map((info, index) => (
-                  <div key={index} className="flex items-start">
-                    <div className="w-12 h-12 bg-goldenrod rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
-                      <info.icon className="h-6 w-6 text-dark-brown" />
+                  <div key={index} className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-goldenrod to-yellow-400 rounded-full flex items-center justify-center flex-shrink-0">
+                      <info.icon className="h-6 w-6 text-black" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-lg">{info.title}</h4>
-                      <p className="text-warm-cream whitespace-pre-line">{info.content}</p>
+                      <h4 className="text-white font-semibold mb-1">{info.title}</h4>
+                      <p className="text-goldenrod font-medium mb-1">{info.content}</p>
+                      <p className="text-gray-400 text-sm">{info.description}</p>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Social Media */}
-            <div>
-              <h4 className="font-semibold text-lg mb-4">Follow Us</h4>
-              <div className="flex space-x-4">
-                {socialLinks.map((social, index) => (
-                  <a 
-                    key={index}
-                    href={social.href}
-                    className="w-10 h-10 bg-goldenrod rounded-lg flex items-center justify-center hover:bg-peru-gold transition-colors"
-                    aria-label={social.label}
-                    data-testid={`social-link-${social.label.toLowerCase()}`}
-                  >
-                    <social.icon className="h-5 w-5 text-dark-brown" />
-                  </a>
-                ))}
+            {/* Special Note */}
+            <div className="bg-gradient-to-r from-goldenrod/20 to-yellow-400/20 rounded-2xl p-6 border border-goldenrod/30">
+              <div className="text-center">
+                <div className="text-4xl mb-3">🇮🇳</div>
+                <h4 className="text-white font-bold text-lg mb-2">India's First Rolling Paper Brand</h4>
+                <p className="text-gray-300 text-sm">
+                  Proudly serving the Indian market with premium quality rolling papers
+                </p>
               </div>
             </div>
+          </div>
+
+          {/* Contact Form */}
+          <div className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 rounded-3xl p-8 border border-gray-700">
+            {isSubmitted ? (
+              <div className="text-center py-12">
+                <CheckCircle className="h-16 w-16 text-goldenrod mx-auto mb-6" />
+                <h3 className="text-2xl font-bold text-white mb-4">Thank You!</h3>
+                <p className="text-gray-300 mb-6">
+                  Your message has been sent successfully. We'll get back to you within 24 hours.
+                </p>
+                <Button
+                  onClick={() => setIsSubmitted(false)}
+                  className="bg-gradient-to-r from-goldenrod to-yellow-400 hover:from-yellow-400 hover:to-goldenrod text-black px-6 py-2 rounded-full font-bold"
+                >
+                  Send Another Message
+                </Button>
+              </div>
+            ) : (
+              <>
+                <h3 className="text-2xl font-playfair font-bold text-white mb-6">
+                  Send us a Message
+                </h3>
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-white text-sm font-medium mb-2">
+                        Name *
+                      </label>
+                      <Input
+                        type="text"
+                        value={formData.name}
+                        onChange={(e) => handleInputChange("name", e.target.value)}
+                        className="bg-gray-700/50 border-gray-600 text-white placeholder-gray-400 focus:border-goldenrod"
+                        placeholder="Your name"
+                        required
+                        data-testid="input-name"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-white text-sm font-medium mb-2">
+                        Email *
+                      </label>
+                      <Input
+                        type="email"
+                        value={formData.email}
+                        onChange={(e) => handleInputChange("email", e.target.value)}
+                        className="bg-gray-700/50 border-gray-600 text-white placeholder-gray-400 focus:border-goldenrod"
+                        placeholder="your@email.com"
+                        required
+                        data-testid="input-email"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-white text-sm font-medium mb-2">
+                        Phone
+                      </label>
+                      <Input
+                        type="tel"
+                        value={formData.phone}
+                        onChange={(e) => handleInputChange("phone", e.target.value)}
+                        className="bg-gray-700/50 border-gray-600 text-white placeholder-gray-400 focus:border-goldenrod"
+                        placeholder="+91 98765 43210"
+                        data-testid="input-phone"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-white text-sm font-medium mb-2">
+                        Inquiry Type *
+                      </label>
+                      <Select value={formData.inquiryType} onValueChange={(value) => handleInputChange("inquiryType", value)}>
+                        <SelectTrigger className="bg-gray-700/50 border-gray-600 text-white focus:border-goldenrod" data-testid="select-inquiry-type">
+                          <SelectValue placeholder="Select inquiry type" />
+                        </SelectTrigger>
+                        <SelectContent className="bg-gray-800 border-gray-600">
+                          <SelectItem value="general" className="text-white hover:bg-gray-700">General Inquiry</SelectItem>
+                          <SelectItem value="product" className="text-white hover:bg-gray-700">Rolling Paper Information</SelectItem>
+                          <SelectItem value="retail" className="text-white hover:bg-gray-700">Retail Partnership</SelectItem>
+                          <SelectItem value="bulk" className="text-white hover:bg-gray-700">Bulk Orders</SelectItem>
+                          <SelectItem value="quality" className="text-white hover:bg-gray-700">Quality Questions</SelectItem>
+                          <SelectItem value="other" className="text-white hover:bg-gray-700">Other</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-white text-sm font-medium mb-2">
+                      Message *
+                    </label>
+                    <Textarea
+                      value={formData.message}
+                      onChange={(e) => handleInputChange("message", e.target.value)}
+                      className="bg-gray-700/50 border-gray-600 text-white placeholder-gray-400 focus:border-goldenrod min-h-[120px]"
+                      placeholder="Tell us about your inquiry..."
+                      required
+                      data-testid="textarea-message"
+                    />
+                  </div>
+
+                  <Button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full bg-gradient-to-r from-goldenrod to-yellow-400 hover:from-yellow-400 hover:to-goldenrod text-black py-3 rounded-full font-bold transition-all transform hover:scale-105 disabled:opacity-50"
+                    data-testid="button-submit"
+                  >
+                    {isSubmitting ? (
+                      "Sending..."
+                    ) : (
+                      <>
+                        <Send className="h-4 w-4 mr-2" />
+                        Send Message
+                      </>
+                    )}
+                  </Button>
+                </form>
+              </>
+            )}
           </div>
         </div>
       </div>
