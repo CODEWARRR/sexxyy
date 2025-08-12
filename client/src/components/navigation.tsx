@@ -1,143 +1,93 @@
 import { useState } from "react";
+import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
-import jotahLogoPath from "@assets/jotah-logo.jpeg";
+import { Button } from "@/components/ui/button";
+import jotahLogo from "@assets/jotah-logo.jpeg";
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [location] = useLocation();
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-    setIsMenuOpen(false);
-  };
+  const navLinks = [
+    { href: "/", label: "Home" },
+    { href: "/products", label: "Products" },
+    { href: "/what-the-fun", label: "What the Fun" },
+    { href: "/#contact", label: "Contact" }
+  ];
 
   return (
-    <nav className="fixed top-0 w-full bg-black/90 backdrop-blur-md z-50 border-b border-goldenrod/20">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-sm border-b border-goldenrod/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          <div className="flex items-center">
-            <div className="flex-shrink-0 flex items-center">
-              <img 
-                src={jotahLogoPath}
-                alt="Jotah Logo"
-                className="h-10 w-auto rounded-lg mr-3 border border-goldenrod/30"
-              />
-              <h1 className="text-2xl font-playfair font-bold bg-gradient-to-r from-goldenrod to-yellow-400 bg-clip-text text-transparent">
-                JOTAH
-              </h1>
-            </div>
-          </div>
-          
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
-              <button
-                onClick={() => scrollToSection("home")}
-                className="text-gray-300 hover:text-goldenrod px-3 py-2 text-sm font-medium transition-colors"
-                data-testid="nav-home"
-              >
-                Home
-              </button>
-              <button
-                onClick={() => scrollToSection("products")}
-                className="text-gray-300 hover:text-goldenrod px-3 py-2 text-sm font-medium transition-colors"
-                data-testid="nav-products"
-              >
-                Products
-              </button>
-              <button
-                onClick={() => scrollToSection("brand-story")}
-                className="text-gray-300 hover:text-goldenrod px-3 py-2 text-sm font-medium transition-colors"
-                data-testid="nav-brand-story"
-              >
-                Our Story
-              </button>
-              <button
-                onClick={() => scrollToSection("find-products")}
-                className="text-gray-300 hover:text-goldenrod px-3 py-2 text-sm font-medium transition-colors"
-                data-testid="nav-find-products"
-              >
-                Find Products
-              </button>
-              <a
-                href="/what-the-fun"
-                className="text-gray-300 hover:text-goldenrod px-3 py-2 text-sm font-medium transition-colors"
-                data-testid="nav-what-the-fun"
-              >
-                What the Fun
-              </a>
-              <button
-                onClick={() => scrollToSection("contact")}
-                className="bg-gradient-to-r from-goldenrod to-yellow-400 hover:from-yellow-400 hover:to-goldenrod text-black px-4 py-2 rounded-full text-sm font-bold transition-all"
-                data-testid="nav-contact"
-              >
-                Contact
-              </button>
-            </div>
-          </div>
-          
-          <div className="md:hidden">
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-dark-brown hover:text-saddle-brown"
-              data-testid="button-mobile-menu"
-            >
-              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </button>
-          </div>
-        </div>
-      </div>
+        <div className="flex items-center justify-between h-20">
+          {/* Logo */}
+          <Link href="/" className="flex items-center space-x-3 group">
+            <img 
+              src={jotahLogo} 
+              alt="Jotah Logo" 
+              className="h-12 w-12 rounded-full object-cover border-2 border-goldenrod/50 group-hover:border-goldenrod transition-colors"
+            />
+            <span className="text-2xl font-playfair font-bold bg-gradient-to-r from-goldenrod to-yellow-400 bg-clip-text text-transparent">
+              JOTAH
+            </span>
+          </Link>
 
-      {/* Mobile menu */}
-      {isMenuOpen && (
-        <div className="md:hidden bg-black/95 border-t border-goldenrod/20">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <button
-              onClick={() => scrollToSection("home")}
-              className="block text-gray-300 hover:text-goldenrod px-3 py-2 text-base font-medium w-full text-left"
-              data-testid="mobile-nav-home"
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-8">
+            {navLinks.map((link) => (
+              <Link 
+                key={link.href}
+                href={link.href}
+                className={`text-white hover:text-goldenrod transition-colors font-medium ${
+                  location === link.href ? 'text-goldenrod' : ''
+                }`}
+              >
+                {link.label}
+              </Link>
+            ))}
+            <Button 
+              className="bg-gradient-to-r from-goldenrod to-yellow-400 hover:from-yellow-400 hover:to-goldenrod text-black px-6 py-2 rounded-full font-bold transition-all transform hover:scale-105"
+              data-testid="button-order-now"
             >
-              Home
-            </button>
-            <button
-              onClick={() => scrollToSection("products")}
-              className="block text-dark-brown hover:text-saddle-brown px-3 py-2 text-base font-medium w-full text-left"
-              data-testid="mobile-nav-products"
-            >
-              Products
-            </button>
-            <button
-              onClick={() => scrollToSection("brand-story")}
-              className="block text-dark-brown hover:text-saddle-brown px-3 py-2 text-base font-medium w-full text-left"
-              data-testid="mobile-nav-brand-story"
-            >
-              Our Story
-            </button>
-            <button
-              onClick={() => scrollToSection("find-products")}
-              className="block text-dark-brown hover:text-saddle-brown px-3 py-2 text-base font-medium w-full text-left"
-              data-testid="mobile-nav-find-products"
-            >
-              Find Products
-            </button>
-            <a
-              href="/what-the-fun"
-              className="block text-dark-brown hover:text-saddle-brown px-3 py-2 text-base font-medium w-full text-left"
-              data-testid="mobile-nav-what-the-fun"
-            >
-              What the Fun
-            </a>
-            <button
-              onClick={() => scrollToSection("contact")}
-              className="block bg-saddle-brown hover:bg-dark-brown text-white px-3 py-2 text-base font-medium w-full text-left rounded-md mt-2"
-              data-testid="mobile-nav-contact"
-            >
-              Contact
-            </button>
+              Order Now
+            </Button>
           </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="md:hidden text-white hover:text-goldenrod transition-colors"
+            data-testid="button-mobile-menu"
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
-      )}
+
+        {/* Mobile Navigation */}
+        {isMenuOpen && (
+          <div className="md:hidden bg-black/95 backdrop-blur-sm border-t border-goldenrod/20">
+            <div className="px-4 py-6 space-y-4">
+              {navLinks.map((link) => (
+                <Link 
+                  key={link.href}
+                  href={link.href}
+                  className={`block text-white hover:text-goldenrod transition-colors font-medium ${
+                    location === link.href ? 'text-goldenrod' : ''
+                  }`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              ))}
+              <Button 
+                className="w-full bg-gradient-to-r from-goldenrod to-yellow-400 hover:from-yellow-400 hover:to-goldenrod text-black py-3 rounded-full font-bold transition-all mt-4"
+                data-testid="button-mobile-order-now"
+              >
+                Order Now
+              </Button>
+            </div>
+          </div>
+        )}
+      </div>
     </nav>
   );
 }

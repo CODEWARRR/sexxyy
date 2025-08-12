@@ -136,7 +136,7 @@ export default function ContactSection() {
             <div className="bg-gradient-to-r from-goldenrod/20 to-yellow-400/20 rounded-2xl p-6 border border-goldenrod/30">
               <div className="text-center">
                 <div className="text-4xl mb-3">🇮🇳</div>
-                <h4 className="text-white font-bold text-lg mb-2">India's First Rolling Paper Brand</h4>
+                <h4 className="text-white font-bold text-lg mb-2">Premium Indian Rolling Paper Brand</h4>
                 <p className="text-gray-300 text-sm">
                   Proudly serving the Indian market with premium quality rolling papers
                 </p>

@@ -39,7 +39,7 @@ export default function Footer() {
               JOTAH
             </h3>
             <p className="text-gray-300 mb-6 leading-relaxed">
-              India's first rolling paper brand, crafted with premium quality materials and uncompromising standards for the discerning smoker.
+              Premium Indian rolling paper brand, crafted with quality materials and uncompromising standards for the discerning smoker.
             </p>
             
             {/* Contact Info */}
@@ -135,7 +135,7 @@ export default function Footer() {
               <span className="hidden md:block w-1 h-6 bg-goldenrod/50"></span>
               <span className="flex items-center">
                 <span className="text-2xl mr-2">🏆</span>
-                India's First Brand
+                Indian Brand
               </span>
             </div>
           </div>
@@ -145,7 +145,7 @@ export default function Footer() {
         <div className="border-t border-gray-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-gray-400 text-sm mb-4 md:mb-0">
-              © 2024 Jotah. All rights reserved. India's first rolling paper brand.
+              © 2024 Jotah. All rights reserved. Premium Indian rolling paper brand.
             </div>
             <div className="flex space-x-6 text-sm">
               <a href="#" className="text-gray-400 hover:text-goldenrod transition-colors">
