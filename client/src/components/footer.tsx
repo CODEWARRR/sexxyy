@@ -16,9 +16,9 @@ export default function Footer() {
   ];
 
   const supportLinks = [
-    "Find Dealers",
+    "Find Products",
     "Contact Us",
-    "Become a Dealer",
+    "What the Fun",
     "FAQ"
   ];
 

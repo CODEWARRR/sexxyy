@@ -3,7 +3,7 @@ import HeroSection from "@/components/hero-section";
 import ProductShowcase from "@/components/product-showcase";
 import HeritageSection from "@/components/heritage-section";
 import Testimonials from "@/components/testimonials";
-import DealerLocator from "@/components/dealer-locator";
+import FindProducts from "@/components/find-products";
 import ContactSection from "@/components/contact-section";
 import Footer from "@/components/footer";
 
@@ -15,7 +15,7 @@ export default function Home() {
       <ProductShowcase />
       <HeritageSection />
       <Testimonials />
-      <DealerLocator />
+      <FindProducts />
       <ContactSection />
       <Footer />
     </div>

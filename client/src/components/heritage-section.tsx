@@ -33,11 +33,16 @@ export default function HeritageSection() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className="text-4xl md:text-5xl font-playfair font-bold mb-6">
-              Centuries of <span className="text-goldenrod">Craftsmanship</span>
+              India's <span className="text-goldenrod">First & Only</span> Rolling Paper Brand
             </h2>
-            <p className="text-lg text-warm-cream mb-8 leading-relaxed">
-              Rooted in ancient Indian traditions, Jotah represents the perfect harmony between time-honored craftsmanship and modern innovation. Our artisans have passed down their skills through generations, ensuring every product meets the highest standards of quality and authenticity.
+            <p className="text-lg text-warm-cream mb-6 leading-relaxed">
+              Rooted in ancient Indian traditions, Jotah represents the perfect harmony between time-honored craftsmanship and modern innovation. As India's pioneering rolling paper brand, we've broken new ground in bringing premium quality to the domestic market.
             </p>
+            <div className="bg-goldenrod/10 rounded-xl p-4 mb-8 border border-goldenrod/20">
+              <p className="text-goldenrod font-semibold">
+                🏆 Breaking Barriers: India's first indigenous rolling paper company, setting new standards for quality and authenticity in the market.
+              </p>
+            </div>
             
             <div className="grid md:grid-cols-2 gap-6 mb-8">
               {features.map((feature, index) => (

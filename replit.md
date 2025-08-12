@@ -1,6 +1,6 @@
 # Overview
 
-This is a full-stack web application for Jotah, a premium rolling papers and tobacco accessories company. The application showcases the company's heritage, products, and provides dealer locator functionality along with a contact form for customer inquiries. Built as a modern React frontend with an Express.js backend, it emphasizes the brand's Indian heritage and premium quality positioning.
+This is a full-stack web application for Jotah, India's first and only rolling paper brand. The application showcases the company's heritage, products, and provides online ordering through delivery platforms along with a contact form for customer inquiries. Built as a modern React frontend with an Express.js backend, it emphasizes the brand's pioneering position as India's indigenous rolling paper company and premium quality positioning.
 
 # User Preferences
 

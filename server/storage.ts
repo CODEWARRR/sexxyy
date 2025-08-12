@@ -93,6 +93,7 @@ export class MemStorage implements IStorage {
     const contact: Contact = { 
       ...insertContact, 
       id, 
+      phone: insertContact.phone || null,
       createdAt: new Date() 
     };
     this.contacts.set(id, contact);
@@ -125,7 +126,13 @@ export class MemStorage implements IStorage {
 
   async createDealer(insertDealer: InsertDealer): Promise<Dealer> {
     const id = randomUUID();
-    const dealer: Dealer = { ...insertDealer, id };
+    const dealer: Dealer = { 
+      ...insertDealer, 
+      id,
+      status: insertDealer.status || "open",
+      latitude: insertDealer.latitude || null,
+      longitude: insertDealer.longitude || null
+    };
     this.dealers.set(id, dealer);
     return dealer;
   }

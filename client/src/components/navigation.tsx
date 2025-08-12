@@ -48,12 +48,19 @@ export default function Navigation() {
                 Heritage
               </button>
               <button
-                onClick={() => scrollToSection("dealers")}
+                onClick={() => scrollToSection("find-products")}
                 className="text-dark-brown hover:text-saddle-brown px-3 py-2 text-sm font-medium transition-colors"
-                data-testid="nav-dealers"
+                data-testid="nav-find-products"
               >
-                Find Dealers
+                Find Products
               </button>
+              <a
+                href="/what-the-fun"
+                className="text-dark-brown hover:text-saddle-brown px-3 py-2 text-sm font-medium transition-colors"
+                data-testid="nav-what-the-fun"
+              >
+                What the Fun
+              </a>
               <button
                 onClick={() => scrollToSection("contact")}
                 className="bg-saddle-brown hover:bg-dark-brown text-white px-4 py-2 rounded-md text-sm font-medium transition-colors"
@@ -102,12 +109,19 @@ export default function Navigation() {
               Heritage
             </button>
             <button
-              onClick={() => scrollToSection("dealers")}
+              onClick={() => scrollToSection("find-products")}
               className="block text-dark-brown hover:text-saddle-brown px-3 py-2 text-base font-medium w-full text-left"
-              data-testid="mobile-nav-dealers"
+              data-testid="mobile-nav-find-products"
             >
-              Find Dealers
+              Find Products
             </button>
+            <a
+              href="/what-the-fun"
+              className="block text-dark-brown hover:text-saddle-brown px-3 py-2 text-base font-medium w-full text-left"
+              data-testid="mobile-nav-what-the-fun"
+            >
+              What the Fun
+            </a>
             <button
               onClick={() => scrollToSection("contact")}
               className="block bg-saddle-brown hover:bg-dark-brown text-white px-3 py-2 text-base font-medium w-full text-left rounded-md mt-2"

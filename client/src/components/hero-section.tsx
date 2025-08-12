@@ -21,11 +21,16 @@ export default function HeroSection() {
       
       <div className="relative z-10 text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <h1 className="text-5xl md:text-7xl font-playfair font-bold text-white mb-6">
-          Crafted with <span className="text-goldenrod">Tradition</span>
+          India's <span className="text-goldenrod">Only</span> Rolling Paper Brand
         </h1>
-        <p className="text-xl md:text-2xl text-warm-cream mb-8 leading-relaxed">
+        <p className="text-xl md:text-2xl text-warm-cream mb-4 leading-relaxed">
           Premium rolling papers and tobacco accessories, handcrafted with centuries of Indian heritage and modern excellence
         </p>
+        <div className="bg-goldenrod/20 backdrop-blur-sm rounded-xl p-4 mb-8 border border-goldenrod/30">
+          <p className="text-goldenrod font-semibold text-lg">
+            🇮🇳 Proudly Made in India • First Indigenous Brand • Premium Quality Since Day One
+          </p>
+        </div>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button
             onClick={() => scrollToSection("products")}
