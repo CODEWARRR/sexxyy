@@ -163,7 +163,7 @@ export default function Testimonials() {
             What India Says
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-            Real reviews from real customers across India who trust Jotah for their rolling paper needs
+            Real reviews from real customers across India who trust Jotah's premium France paper using 13.8GSM specification for their rolling paper needs
           </p>
           <div className="w-24 h-1 bg-gradient-to-r from-transparent via-goldenrod to-transparent mx-auto"></div>
         </div>

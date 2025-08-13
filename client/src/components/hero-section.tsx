@@ -50,7 +50,7 @@ export default function HeroSection() {
         
         {/* Description */}
         <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed animate-fade-in-delay-2">
-          Experience the perfect blend of tradition and innovation with India's premium rolling papers. 
+          Experience the perfect blend of tradition and innovation with premium rolling papers made from France paper using 13.8GSM specification. 
           Crafted for the connoisseur, designed for excellence.
         </p>
         

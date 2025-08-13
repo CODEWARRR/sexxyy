@@ -39,11 +39,11 @@ export default function BrandStory() {
               <div className="space-y-6 text-gray-300 text-lg leading-relaxed">
                 <p>
                   In a market dominated by international brands, <span className="text-goldenrod font-semibold">Jotah emerged as a premium Indian rolling paper company</span>, 
-                  bringing exceptional quality and authentic craftsmanship to Indian smokers.
+                  bringing exceptional quality using ultra-thin 13.8GSM France paper with authentic craftsmanship to Indian smokers.
                 </p>
                 <p>
                   Our journey began with a simple belief: Indian consumers deserve rolling papers 
-                  that are made with the same precision and care as the finest international brands, 
+                  made with premium France paper using 13.8GSM specification, crafted with the same precision and care as the finest international brands, 
                   but designed specifically for the Indian market.
                 </p>
                 <p>

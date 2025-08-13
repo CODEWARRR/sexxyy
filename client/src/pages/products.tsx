@@ -13,7 +13,7 @@ export default function Products() {
       name: "Jotah Classic",
       tagline: "The Original",
       description: "Our signature rolling papers that started it all. Perfect for everyday smoking with consistent quality.",
-      features: ["Ultra-thin 14gsm paper", "Natural Arabic gum", "32 leaves per pack", "Classic 78mm size"],
+      features: ["Ultra-thin 13.8GSM France paper", "Natural Arabic gum", "32 leaves per pack", "Classic 78mm size"],
       price: "₹25",
       badge: "Best Seller",
       category: "individual"
@@ -23,7 +23,7 @@ export default function Products() {
       name: "Jotah Premium",
       tagline: "Enhanced Experience",
       description: "Premium quality papers for the connoisseur. Unbleached and organic for pure taste.",
-      features: ["Unbleached rice paper", "Slow & even burn", "King size 110mm", "Premium packaging"],
+      features: ["Unbleached 13.8GSM France paper", "Slow & even burn", "King size 110mm", "Premium packaging"],
       price: "₹40",
       badge: "Premium",
       category: "individual"
@@ -33,7 +33,7 @@ export default function Products() {
       name: "Jotah Heritage",
       tagline: "Limited Edition",
       description: "Special edition with traditional Indian artwork. A collector's piece for enthusiasts.",
-      features: ["Heritage design", "Collector's packaging", "Hand-crafted quality", "Limited availability"],
+      features: ["Premium 13.8GSM France paper", "Heritage design", "Collector's packaging", "Limited availability"],
       price: "₹60",
       badge: "Limited",
       category: "individual"
@@ -104,7 +104,7 @@ export default function Products() {
             Premium Rolling Papers
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-            Discover our complete range of premium rolling papers, crafted with precision for the perfect smoking experience
+            Discover our complete range of premium rolling papers made from France paper using 13.8GSM specification, crafted with precision for the perfect smoking experience
           </p>
           <div className="w-24 h-1 bg-gradient-to-r from-transparent via-goldenrod to-transparent mx-auto"></div>
         </div>
