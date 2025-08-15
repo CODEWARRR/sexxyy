@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jotah - Premium Rolling Papers & Tobacco Accessories</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'saddle-brown': '#8B4513',
+                        'goldenrod': '#DAA520',
+                        'warm-cream': '#F5E6D3',
+                        'dark-brown': '#2F1B14',
+                        'peru-gold': '#CD853F',
+                        'cornsilk': '#FFF8DC'
+                    },
+                    fontFamily: {
+                        'playfair': ['Playfair Display', 'serif'],
+                        'inter': ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        };
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="font-inter bg-warm-cream">
+
+    <!-- @COMPONENT: Navigation [responsive navigation with brand logo and menu items] -->
+    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-sm z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <h1 class="text-2xl font-playfair font-bold text-saddle-brown">Jotah</h1>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="text-dark-brown hover:text-saddle-brown px-3 py-2 text-sm font-medium transition-colors">Home</a>
+                        <a href="#products" class="text-dark-brown hover:text-saddle-brown px-3 py-2 text-sm font-medium transition-colors">Products</a>
+                        <a href="#heritage" class="text-dark-brown hover:text-saddle-brown px-3 py-2 text-sm font-medium transition-colors">Heritage</a>
+                        <a href="#dealers" class="text-dark-brown hover:text-saddle-brown px-3 py-2 text-sm font-medium transition-colors">Find Dealers</a>
+                        <a href="#contact" class="bg-saddle-brown hover:bg-dark-brown text-white px-4 py-2 rounded-md text-sm font-medium transition-colors">Contact</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button data-event="click:toggleMobileMenu" class="text-dark-brown hover:text-saddle-brown">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- @END_COMPONENT: Navigation -->
+
+    <!-- @COMPONENT: Hero Section [full-screen hero with brand story and call-to-action] -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <!-- Premium tobacco leaves and rolling papers arranged aesthetically -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://pixabay.com/get/g13b2e9b97da71c343a380b2f374c2f96a38dbaba1605e395dbd345f59665404c51b20d73491e9e1806a10607b9bebaecfa9e5339a56677a23f6f4b19174b16ba_1280.jpg" alt="Premium tobacco leaves background" class="w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-r from-dark-brown/80 to-saddle-brown/60"></div>
+        </div>
+        
+        <div class="relative z-10 text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-5xl md:text-7xl font-playfair font-bold text-white mb-6">
+                Crafted with <span class="text-goldenrod">Tradition</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-warm-cream mb-8 leading-relaxed">
+                Premium rolling papers and tobacco accessories, handcrafted with centuries of Indian heritage and modern excellence
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button data-event="click:scrollToProducts" class="bg-goldenrod hover:bg-peru-gold text-dark-brown px-8 py-4 rounded-lg font-semibold text-lg transition-all transform hover:scale-105">
+                    Explore Products
+                </button>
+                <button data-event="click:scrollToHeritage" class="border-2 border-white text-white hover:bg-white hover:text-dark-brown px-8 py-4 rounded-lg font-semibold text-lg transition-all">
+                    Our Heritage
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Hero Section -->
+
+    <!-- @COMPONENT: Product Showcase [interactive product gallery with specifications] -->
+    <section id="products" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-playfair font-bold text-dark-brown mb-6">Premium Collection</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Each product is carefully crafted using the finest materials and traditional techniques, ensuring an exceptional experience
+                </p>
+            </div>
+
+            <!-- Product Categories -->
+            <div class="grid md:grid-cols-2 gap-8 mb-16">
+                <!-- Rolling Papers -->
+                <div class="bg-warm-cream rounded-2xl overflow-hidden shadow-xl">
+                    <!-- Premium rolling papers arranged in an elegant pattern -->
+                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" alt="Premium rolling papers collection" class="w-full h-64 object-cover" />
+                    <div class="p-8">
+                        <h3 class="text-2xl font-playfair font-bold text-dark-brown mb-4">Rolling Papers</h3>
+                        <p class="text-gray-600 mb-6">Ultra-thin, slow-burning papers made from the finest rice and hemp fibers</p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-check text-goldenrod mr-3"></i>
+                                Natural gum arabic adhesive
+                            </li>
+                            <li class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-check text-goldenrod mr-3"></i>
+                                Multiple size options
+                            </li>
+                            <li class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-check text-goldenrod mr-3"></i>
+                                Eco-friendly packaging
+                            </li>
+                        </ul>
+                        <button data-event="click:viewProductDetails" class="bg-saddle-brown hover:bg-dark-brown text-white px-6 py-3 rounded-lg font-medium transition-colors">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tobacco Accessories -->
+                <div class="bg-warm-cream rounded-2xl overflow-hidden shadow-xl">
+                    <!-- Sophisticated smoking accessories with wooden and metal finishes -->
+                    <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" alt="Premium tobacco accessories collection" class="w-full h-64 object-cover" />
+                    <div class="p-8">
+                        <h3 class="text-2xl font-playfair font-bold text-dark-brown mb-4">Accessories</h3>
+                        <p class="text-gray-600 mb-6">Handcrafted accessories combining traditional Indian craftsmanship with modern design</p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-check text-goldenrod mr-3"></i>
+                                Premium materials
+                            </li>
+                            <li class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-check text-goldenrod mr-3"></i>
+                                Artisan craftsmanship
+                            </li>
+                            <li class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-check text-goldenrod mr-3"></i>
+                                Lifetime durability
+                            </li>
+                        </ul>
+                        <button data-event="click:viewProductDetails" class="bg-saddle-brown hover:bg-dark-brown text-white px-6 py-3 rounded-lg font-medium transition-colors">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Gallery -->
+            <!-- @MAP: products.map(product => ( -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <!-- Rolling papers product shot with elegant packaging -->
+                <div class="aspect-square rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow cursor-pointer" data-event="click:openProductModal">
+                    <img src="https://images.unsplash.com/photo-1565992441121-4367c2967103?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=400" alt="Premium rolling papers package" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" />
+                </div>
+                <!-- Tobacco leaves in natural lighting -->
+                <div class="aspect-square rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow cursor-pointer" data-event="click:openProductModal">
+                    <img src="https://pixabay.com/get/g5367f19ccfdaaa196ba3ee9fd17386c19d9b4b41faa37971b07d09fa0581393740c43badae19c327d68eb31884b99d8c0e7db4d1e392554216a97d352f7c9040_1280.jpg" alt="Premium tobacco leaves" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" />
+                </div>
+                <!-- Lifestyle smoking accessories arranged aesthetically -->
+                <div class="aspect-square rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow cursor-pointer" data-event="click:openProductModal">
+                    <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=400" alt="Smoking accessories lifestyle shot" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" />
+                </div>
+                <!-- Indian cultural elements with traditional patterns -->
+                <div class="aspect-square rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow cursor-pointer" data-event="click:openProductModal">
+                    <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=400" alt="Indian cultural design elements" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" />
+                </div>
+            </div>
+            <!-- @END_MAP )) -->
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Product Showcase -->
+
+    <!-- @COMPONENT: Heritage Section [brand story and quality messaging] -->
+    <section id="heritage" class="py-20 bg-gradient-to-br from-dark-brown to-saddle-brown text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-playfair font-bold mb-6">
+                        Centuries of <span class="text-goldenrod">Craftsmanship</span>
+                    </h2>
+                    <p class="text-lg text-warm-cream mb-8 leading-relaxed">
+                        Rooted in ancient Indian traditions, Jotah represents the perfect harmony between time-honored craftsmanship and modern innovation. Our artisans have passed down their skills through generations, ensuring every product meets the highest standards of quality and authenticity.
+                    </p>
+                    
+                    <div class="grid md:grid-cols-2 gap-6 mb-8">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-goldenrod rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-award text-dark-brown text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg">Premium Quality</h4>
+                                <p class="text-warm-cream text-sm">Finest materials sourced globally</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-goldenrod rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-leaf text-dark-brown text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg">Eco-Friendly</h4>
+                                <p class="text-warm-cream text-sm">Sustainable production methods</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-goldenrod rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-hands text-dark-brown text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg">Handcrafted</h4>
+                                <p class="text-warm-cream text-sm">Traditional artisan techniques</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-goldenrod rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-certificate text-dark-brown text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg">Certified</h4>
+                                <p class="text-warm-cream text-sm">International quality standards</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button data-event="click:learnMoreHeritage" class="bg-goldenrod hover:bg-peru-gold text-dark-brown px-8 py-4 rounded-lg font-semibold transition-all transform hover:scale-105">
+                        Learn More About Our Story
+                    </button>
+                </div>
+
+                <div class="relative">
+                    <!-- Traditional Indian artisan working with tobacco leaves -->
+                    <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=900" alt="Traditional Indian craftsmanship" class="rounded-2xl shadow-2xl w-full" />
+                    <div class="absolute inset-0 rounded-2xl bg-gradient-to-t from-dark-brown/50 to-transparent"></div>
+                    
+                    <!-- Quality Certifications -->
+                    <div class="absolute bottom-6 left-6 right-6">
+                        <div class="bg-white/95 backdrop-blur-sm rounded-xl p-4">
+                            <h4 class="text-dark-brown font-semibold mb-2">Quality Certifications</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-goldenrod text-dark-brown px-3 py-1 rounded-full text-xs font-medium">ISO 9001</span>
+                                <span class="bg-goldenrod text-dark-brown px-3 py-1 rounded-full text-xs font-medium">HACCP</span>
+                                <span class="bg-goldenrod text-dark-brown px-3 py-1 rounded-full text-xs font-medium">Organic</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Heritage Section -->
+
+    <!-- @COMPONENT: Testimonials [customer testimonials and reviews] -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-playfair font-bold text-dark-brown mb-6">What Our Customers Say</h2>
+                <p class="text-lg text-gray-600">Trusted by thousands of satisfied customers worldwide</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- @MAP: testimonials.map(testimonial => ( -->
+                <div class="bg-warm-cream rounded-xl p-8 shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <!-- Customer profile image -->
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&h=100" alt="Customer testimonial" class="w-12 h-12 rounded-full mr-4" />
+                        <div>
+                            <h4 class="font-semibold text-dark-brown" data-bind="testimonial.name">Rajesh Kumar</h4>
+                            <div class="flex text-goldenrod">
+                                <i class="fas fa-star text-sm"></i>
+                                <i class="fas fa-star text-sm"></i>
+                                <i class="fas fa-star text-sm"></i>
+                                <i class="fas fa-star text-sm"></i>
+                                <i class="fas fa-star text-sm"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic" data-bind="testimonial.review">"The quality of these rolling papers is unmatched. You can truly feel the difference in every aspect - from the texture to the burn rate. Exceptional craftsmanship!"</p>
+                </div>
+
+                <div class="bg-warm-cream rounded-xl p-8 shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <!-- Customer profile image -->
+                        <img src="https://pixabay.com/get/g90095577de3445a4f1361f11440713c38f3f6507e94482758ab5318f352a9d48e7ef9805b9651947d78707cfcb028ba604bc83e068ad857e0874718df6a8b523_1280.jpg" alt="Customer testimonial" class="w-12 h-12 rounded-full mr-4" />
+                        <div>
+                            <h4 class="font-semibold text-dark-brown" data-bind="testimonial.name">Sarah Johnson</h4>
+                            <div class="flex text-goldenrod">
+                                <i class="fas fa-star text-sm"></i>
+                                <i class="fas fa-star text-sm"></i>
+                                <i class="fas fa-star text-sm"></i>
+                                <i class="fas fa-star text-sm"></i>
+                                <i class="fas fa-star text-sm"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic" data-bind="testimonial.review">"I've been using Jotah products for over two years now. The consistency in quality and the attention to detail in their accessories is remarkable. Highly recommended!"</p>
+                </div>
+
+                <div class="bg-warm-cream rounded-xl p-8 shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <!-- Customer profile image -->
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&h=100" alt="Customer testimonial" class="w-12 h-12 rounded-full mr-4" />
+                        <div>
+                            <h4 class="font-semibold text-dark-brown" data-bind="testimonial.name">Michael Chen</h4>
+                            <div class="flex text-goldenrod">
+                                <i class="fas fa-star text-sm"></i>
+                                <i class="fas fa-star text-sm"></i>
+                                <i class="fas fa-star text-sm"></i>
+                                <i class="fas fa-star text-sm"></i>
+                                <i class="fas fa-star text-sm"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic" data-bind="testimonial.review">"As a retailer, I can confidently say that Jotah products are among the best in the market. My customers always return for more. Excellent business partnership!"</p>
+                </div>
+                <!-- @END_MAP )) -->
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Testimonials -->
+
+    <!-- @COMPONENT: Dealer Locator [interactive dealer/retailer locator] -->
+    <section id="dealers" class="py-20 bg-gradient-to-br from-warm-cream to-cornsilk">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-playfair font-bold text-dark-brown mb-6">Find Our Products</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Locate authorized dealers and retailers near you to experience our premium products firsthand
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="bg-white rounded-2xl p-8 shadow-xl">
+                        <h3 class="text-2xl font-playfair font-bold text-dark-brown mb-6">Dealer Locator</h3>
+                        
+                        <form data-implementation="Integrate with dealer database API">
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Location</label>
+                                    <div class="relative">
+                                        <input type="text" placeholder="Enter city or ZIP code" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-saddle-brown focus:border-transparent" />
+                                        <i class="fas fa-search absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Search Radius</label>
+                                    <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-saddle-brown focus:border-transparent">
+                                        <option>10 km</option>
+                                        <option>25 km</option>
+                                        <option>50 km</option>
+                                        <option>100 km</option>
+                                    </select>
+                                </div>
+                                <button type="submit" data-event="click:searchDealers" class="w-full bg-saddle-brown hover:bg-dark-brown text-white px-6 py-3 rounded-lg font-semibold transition-colors">
+                                    Find Dealers
+                                </button>
+                            </div>
+                        </form>
+
+                        <div class="mt-8 pt-8 border-t border-gray-200">
+                            <h4 class="font-semibold text-dark-brown mb-4">Become a Dealer</h4>
+                            <p class="text-gray-600 text-sm mb-4">
+                                Join our network of premium retailers and offer your customers the finest tobacco accessories
+                            </p>
+                            <button data-event="click:applyDealer" class="bg-goldenrod hover:bg-peru-gold text-dark-brown px-6 py-3 rounded-lg font-medium transition-colors">
+                                Apply Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <!-- Featured Dealers -->
+                    <!-- @MAP: featuredDealers.map(dealer => ( -->
+                    <div class="bg-white rounded-xl p-6 shadow-lg">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h4 class="font-semibold text-lg text-dark-brown" data-bind="dealer.name">Premium Smoke Shop</h4>
+                                <p class="text-gray-600" data-bind="dealer.address">123 Main Street, Mumbai, Maharashtra</p>
+                            </div>
+                            <div class="flex items-center bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">
+                                <i class="fas fa-circle text-xs mr-2"></i>
+                                Open
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-phone mr-2"></i>
+                                <span data-bind="dealer.phone">+91 98765 43210</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-map-marker-alt mr-2"></i>
+                                <span data-bind="dealer.distance">2.3 km</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-6 shadow-lg">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h4 class="font-semibold text-lg text-dark-brown" data-bind="dealer.name">Traditional Tobacco House</h4>
+                                <p class="text-gray-600" data-bind="dealer.address">456 Heritage Road, Delhi, India</p>
+                            </div>
+                            <div class="flex items-center bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">
+                                <i class="fas fa-circle text-xs mr-2"></i>
+                                Open
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-phone mr-2"></i>
+                                <span data-bind="dealer.phone">+91 87654 32109</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-map-marker-alt mr-2"></i>
+                                <span data-bind="dealer.distance">4.7 km</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-6 shadow-lg">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h4 class="font-semibold text-lg text-dark-brown" data-bind="dealer.name">Elite Accessories Co.</h4>
+                                <p class="text-gray-600" data-bind="dealer.address">789 Business District, Bangalore, Karnataka</p>
+                            </div>
+                            <div class="flex items-center bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">
+                                <i class="fas fa-circle text-xs mr-2"></i>
+                                Closes Soon
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-phone mr-2"></i>
+                                <span data-bind="dealer.phone">+91 76543 21098</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-map-marker-alt mr-2"></i>
+                                <span data-bind="dealer.distance">6.1 km</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- @END_MAP )) -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Dealer Locator -->
+
+    <!-- @COMPONENT: Contact Section [contact information and inquiry form] -->
+    <section id="contact" class="py-20 bg-dark-brown text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-playfair font-bold mb-6">Get In Touch</h2>
+                <p class="text-lg text-warm-cream max-w-3xl mx-auto">
+                    Ready to experience premium quality? Contact us for business inquiries, product information, or partnership opportunities
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div class="bg-white rounded-2xl p-8 text-dark-brown">
+                    <h3 class="text-2xl font-playfair font-bold mb-6">Send us a Message</h3>
+                    
+                    <form data-implementation="Integrate with contact form API and email service">
+                        <div class="grid md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">First Name *</label>
+                                <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-saddle-brown focus:border-transparent" />
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Last Name *</label>
+                                <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-saddle-brown focus:border-transparent" />
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
+                                <input type="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-saddle-brown focus:border-transparent" />
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+                                <input type="tel" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-saddle-brown focus:border-transparent" />
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Inquiry Type</label>
+                            <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-saddle-brown focus:border-transparent">
+                                <option>General Inquiry</option>
+                                <option>Product Information</option>
+                                <option>Dealer Partnership</option>
+                                <option>Bulk Orders</option>
+                                <option>Quality Issues</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-6">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Message *</label>
+                            <textarea rows="5" required placeholder="Tell us about your inquiry..." class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-saddle-brown focus:border-transparent resize-none"></textarea>
+                        </div>
+
+                        <button type="submit" data-event="click:submitInquiry" class="w-full bg-saddle-brown hover:bg-dark-brown text-white px-6 py-4 rounded-lg font-semibold transition-colors">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-2xl font-playfair font-bold mb-6">Contact Information</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-goldenrod rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                    <i class="fas fa-map-marker-alt text-dark-brown text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-lg">Head Office</h4>
+                                    <p class="text-warm-cream">123 Heritage Street<br />Mumbai, Maharashtra 400001<br />India</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-goldenrod rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                    <i class="fas fa-phone text-dark-brown text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-lg">Phone</h4>
+                                    <p class="text-warm-cream">+91 22 1234 5678<br />+91 98765 43210</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-goldenrod rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                    <i class="fas fa-envelope text-dark-brown text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-lg">Email</h4>
+                                    <p class="text-warm-cream">info@jotah.com<br />sales@jotah.com</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-goldenrod rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                    <i class="fas fa-clock text-dark-brown text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-lg">Business Hours</h4>
+                                    <p class="text-warm-cream">Monday - Friday: 9:00 AM - 6:00 PM<br />Saturday: 10:00 AM - 4:00 PM<br />Sunday: Closed</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Media -->
+                    <div>
+                        <h4 class="font-semibold text-lg mb-4">Follow Us</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 bg-goldenrod rounded-lg flex items-center justify-center hover:bg-peru-gold transition-colors">
+                                <i class="fab fa-facebook-f text-dark-brown"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-goldenrod rounded-lg flex items-center justify-center hover:bg-peru-gold transition-colors">
+                                <i class="fab fa-instagram text-dark-brown"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-goldenrod rounded-lg flex items-center justify-center hover:bg-peru-gold transition-colors">
+                                <i class="fab fa-twitter text-dark-brown"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-goldenrod rounded-lg flex items-center justify-center hover:bg-peru-gold transition-colors">
+                                <i class="fab fa-linkedin-in text-dark-brown"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Contact Section -->
+
+    <!-- @COMPONENT: Footer [site footer with links and company information] -->
+    <footer class="bg-saddle-brown text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-playfair font-bold mb-4">Jotah</h3>
+                    <p class="text-warm-cream mb-4">Premium rolling papers and tobacco accessories crafted with centuries of Indian heritage and modern excellence.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-warm-cream hover:text-goldenrod transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-warm-cream hover:text-goldenrod transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-warm-cream hover:text-goldenrod transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-warm-cream hover:text-goldenrod transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Products</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-warm-cream hover:text-goldenrod transition-colors">Rolling Papers</a></li>
+                        <li><a href="#" class="text-warm-cream hover:text-goldenrod transition-colors">Tobacco Accessories</a></li>
+                        <li><a href="#" class="text-warm-cream hover:text-goldenrod transition-colors">Premium Collection</a></li>
+                        <li><a href="#" class="text-warm-cream hover:text-goldenrod transition-colors">Gift Sets</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-warm-cream hover:text-goldenrod transition-colors">About Us</a></li>
+                        <li><a href="#" class="text-warm-cream hover:text-goldenrod transition-colors">Our Heritage</a></li>
+                        <li><a href="#" class="text-warm-cream hover:text-goldenrod transition-colors">Quality Standards</a></li>
+                        <li><a href="#" class="text-warm-cream hover:text-goldenrod transition-colors">Careers</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-warm-cream hover:text-goldenrod transition-colors">Find Dealers</a></li>
+                        <li><a href="#" class="text-warm-cream hover:text-goldenrod transition-colors">Contact Us</a></li>
+                        <li><a href="#" class="text-warm-cream hover:text-goldenrod transition-colors">Become a Dealer</a></li>
+                        <li><a href="#" class="text-warm-cream hover:text-goldenrod transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-peru-gold/30 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-warm-cream text-sm">© 2024 Jotah. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-warm-cream hover:text-goldenrod text-sm transition-colors">Privacy Policy</a>
+                    <a href="#" class="text-warm-cream hover:text-goldenrod text-sm transition-colors">Terms of Service</a>
+                    <a href="#" class="text-warm-cream hover:text-goldenrod text-sm transition-colors">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <script>
+        (function() {
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Mobile menu toggle
+            // TODO: Implement mobile menu toggle functionality
+
+            // Product modal functionality
+            // TODO: Implement product modal for detailed product views
+
+            // Form submissions
+            // TODO: Implement form validation and submission logic
+
+            // Dealer search functionality
+            // TODO: Integrate with dealer database and map API
+
+            // Interactive product gallery
+            // TODO: Implement product gallery with zoom and lightbox features
+
+            // Scroll animations
+            // TODO: Add scroll-triggered animations for better user experience
+
+            // Contact form validation
+            // TODO: Add client-side form validation before submission
+
+            console.log('Jotah website initialized successfully');
+        })();
+    </script>
+
+</body>
+</html>
