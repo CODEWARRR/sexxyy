@@ -1,7 +1,7 @@
 // src/components/OrderTrackingPage.tsx
 
 import React, { useState, useEffect } from 'react';
-import './OrderTrackingPage.css'; // Optional: for styling
+import './order-tracking-page.css'; // This is correct
 
 // Define the shape of your data
 interface OrderStatus {
