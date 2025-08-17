@@ -69,7 +69,7 @@ export default function ContactSection() {
     {
       icon: Mail,
       title: "Email Us",
-      content: "hello@jotah.in",
+      content: "pandey.shourya786@gmail.com",
       description: "We respond within 24 hours"
     },
     {
@@ -81,7 +81,7 @@ export default function ContactSection() {
     {
       icon: MapPin,
       title: "Visit Us",
-      content: "Mumbai, India",
+      content: "Gurgaon, India",
       description: "Made in India with pride"
     }
   ];
