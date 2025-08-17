@@ -25,8 +25,8 @@ export default function Footer() {
   const socialLinks = [
     { icon: Facebook, href: "#", label: "Facebook" },
     { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" }
+    { icon: Whatsapp, href: "#", label: "Whatsapp" },
+    
   ];
 
   return (
@@ -46,15 +46,15 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="flex items-center text-gray-300">
                 <Mail className="h-4 w-4 text-goldenrod mr-3" />
-                <span className="text-sm">hello@jotah.in</span>
+                <span className="text-sm">pandey.shourya786@gmail.com</span>
               </div>
               <div className="flex items-center text-gray-300">
                 <Phone className="h-4 w-4 text-goldenrod mr-3" />
-                <span className="text-sm">+91 98765 43210</span>
+                <span className="text-sm">+91 92056 17375</span>
               </div>
               <div className="flex items-center text-gray-300">
                 <MapPin className="h-4 w-4 text-goldenrod mr-3" />
-                <span className="text-sm">Mumbai, India</span>
+                <span className="text-sm">Gurgaon, India</span>
               </div>
             </div>
           </div>
