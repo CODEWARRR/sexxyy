@@ -75,7 +75,7 @@ export default function ContactSection() {
     {
       icon: Phone,
       title: "Call Us",
-      content: "+91 98765 43210",
+      content: "+91 92056 17375",
       description: "Mon-Fri, 9 AM - 6 PM IST"
     },
     {
@@ -207,7 +207,7 @@ export default function ContactSection() {
                         value={formData.phone}
                         onChange={(e) => handleInputChange("phone", e.target.value)}
                         className="bg-gray-700/50 border-gray-600 text-white placeholder-gray-400 focus:border-goldenrod"
-                        placeholder="+91 98765 43210"
+                        placeholder="+91 92056 17375"
                         data-testid="input-phone"
                       />
                     </div>
