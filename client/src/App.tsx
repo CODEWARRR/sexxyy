@@ -8,6 +8,8 @@ import Products from "@/pages/products";
 import Testimonials from "@/pages/testimonials";
 import WhatTheFun from "@/pages/what-the-fun";
 import NotFound from "@/pages/not-found";
+// Import the new OrderTrackingPage component
+import OrderTrackingPage from "@/pages/order-tracking-page"; // Make sure this path is correct
 
 function Router() {
   return (
@@ -16,6 +18,8 @@ function Router() {
       <Route path="/products" component={Products} />
       <Route path="/testimonials" component={Testimonials} />
       <Route path="/what-the-fun" component={WhatTheFun} />
+      {/* Add the new route for the order tracking page */}
+      <Route path="/track-order" component={OrderTrackingPage} />
       <Route component={NotFound} />
     </Switch>
   );
