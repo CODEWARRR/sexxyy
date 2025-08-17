@@ -25,8 +25,7 @@ export default function Footer() {
   const socialLinks = [
     { icon: Facebook, href: "#", label: "Facebook" },
     { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Whatsapp, href: "#", label: "Whatsapp" },
-    
+  
   ];
 
   return (
