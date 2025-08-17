@@ -1,0 +1,57 @@
+/* src/components/OrderTrackingPage.css */
+
+.order-tracking-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-family: Arial, sans-serif;
+}
+
+.order-summary {
+  background-color: #f9f9f9;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 2rem;
+}
+
+.status-timeline {
+  position: relative;
+  padding: 1rem 0;
+  border-left: 2px solid #ccc;
+  margin-left: 10px;
+}
+
+.status-timeline h2 {
+  margin-top: 0;
+  margin-left: -20px;
+  margin-bottom: 1.5rem;
+}
+
+.status-item {
+  position: relative;
+  list-style: none;
+  margin-bottom: 1.5rem;
+  padding-left: 20px;
+}
+
+.status-dot {
+  position: absolute;
+  left: -11px;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  background-color: #007bff;
+  border-radius: 50%;
+  border: 3px solid white;
+}
+
+.status-text {
+  font-weight: bold;
+}
+
+.status-date {
+  color: #777;
+  font-size: 0.9em;
+}
