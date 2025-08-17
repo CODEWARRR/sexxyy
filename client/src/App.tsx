@@ -9,7 +9,7 @@ import Testimonials from "@/pages/testimonials";
 import WhatTheFun from "@/pages/what-the-fun";
 import NotFound from "@/pages/not-found";
 // Import the new OrderTrackingPage component
-import OrderTrackingPage from "@/pages/order-tracking-page"; // Make sure this path is correct
+import OrderTrackingPage from "@/pages/Order-Tracking-Page"; // Make sure this path is correct
 
 function Router() {
   return (
